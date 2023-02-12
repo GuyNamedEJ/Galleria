@@ -6,7 +6,7 @@ export default function Home() {
   });
 
   return (
-    <div className="px-6 flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-4">
+    <div className="px-6 flex flex-col gap-6 md:grid md:grid-cols-2 md:items-center lg:grid-cols-4">
       {tileSet}
     </div>
   );
