@@ -1,10 +1,13 @@
 import Paintings from "../../data.json";
 import Tile from "../components/TileSet";
 export default function Home() {
-
   const tileSet = Paintings.map((painting, index) => {
     return <Tile key={index} index={index} paintingData={painting} />;
   });
 
-  return <div className="grid grid-cols-1 gap-6 px-6">{tileSet}</div>;
+  return (
+    <div className="px-6 flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-4">
+      {tileSet}
+    </div>
+  );
 }
