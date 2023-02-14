@@ -10,7 +10,7 @@ export default function NavBar() {
     const { toggleSlideshow } = useContext(PaintingContext)
 
   return (
-    <nav className="flex items-center justify-between p-6 border-b-2 mb-6">
+    <nav className="flex items-center justify-between p-6 border-b-2 mb-6 md:px-10 desktop:mx-10 desktop:container h-[10vh]">
      
         <img className="w-[113px]" src={Logo} alt="" />
 
