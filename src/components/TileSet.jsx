@@ -10,7 +10,7 @@ export default function Tile({ index, paintingData }) {
       onClick={toggleSlideshow}
       to="/slideshow"
       state={{ painting: paintingData, index: index }}
-      className="ml-4"
+      className="block mb-6"
     >
       <div className="relative">
         <img className="w-full" src={paintingData.images.thumbnail} alt="" />
