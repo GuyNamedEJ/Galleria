@@ -94,7 +94,7 @@ export default function Info() {
         </div>
         <div className="flex items-center justify-between px-6 py-4">
           <div>
-            <p className="text-body-2 font-bold">{PaintingsData[count].name}</p>
+            <p className="text-body-2 md:text-heading-3 font-bold">{PaintingsData[count].name}</p>
             <h3 className="text-body-2">{PaintingsData[count].artist.name}</h3>
           </div>
 
@@ -109,7 +109,7 @@ export default function Info() {
                 }
               }}
               color={`${count == 0 ? "#D8D8D8" : "black"}`}
-              size={"16px"}
+              size={"25px"}
               className=""
             />
 
@@ -125,6 +125,7 @@ export default function Info() {
               color={`${
                 count == PaintingsData.length - 1 ? "#D8D8D8" : "black"
               }`}
+              size={"25px"}
             />
           </div>
         </div>
