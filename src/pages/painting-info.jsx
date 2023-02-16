@@ -64,7 +64,7 @@ export default function Info() {
           />
 
           {/**Painting Info */}
-          <div className="absolute bottom-[-100px] left-[-1px] md:top-[-5px] md:left-[250px] desktop:left-[400px]">
+          <div className="absolute bottom-[-100px] left-[-1px] md:top-[-5px] md:left-[350px] desktop:left-[400px]">
             <div className="p-6 md:pt-0 md:p-16 text-black w-[280px] bg-white  md:w-[445px] md:px-16">
               <h1 className="font-bold md:text-heading-1 md:mb-6">
                 {PaintingsData[count].name}
@@ -72,7 +72,7 @@ export default function Info() {
               <p>{PaintingsData[count].artist.name}</p>
             </div>
             <img
-              className="absolute ml-6 left-6 w-16 md:w-[128px] md:self-end md:left-[250px] desktop:bottom-0 desktop:left-24 "
+              className="absolute ml-6 left-6 w-16 md:w-[128px] md:self-end md:left-[150px] desktop:bottom-0 desktop:left-24 "
               src={PaintingsData[count].artist.image}
               alt=""
             />
