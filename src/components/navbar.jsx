@@ -19,7 +19,7 @@ export default function NavBar() {
         to={`${isStarted ? "/" : "/slideshow"}`}
         state={{ index: 0 }}
       >
-        <p className="text-[9px] tracking-[1.93px] uppercase" href="">
+        <p className="text-[9px] tracking-[1.93px] uppercase md:text-subhead-2" href="">
           {isStarted ? "Stop Slideshow" : "Start Slideshow"}
         </p>
       </Link>
