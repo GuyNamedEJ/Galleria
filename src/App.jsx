@@ -7,7 +7,7 @@ import Navbar from "./components/navbar";
 function App() {
     
   return (
-    <div className="lg:container lg:mx-auto">
+    <div className="lg:container mx-auto">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/> }/>

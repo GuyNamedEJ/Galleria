@@ -8,21 +8,19 @@ import PaintingContext from "../context/PaintingContext";
 import Modal from "../components/Modal";
 
 export default function Info() {
-
-  const [toggleActive, setToggleActive] = useState(false)
+  const [toggleActive, setToggleActive] = useState(false);
   const location = useLocation();
   const { index } = location.state;
   const [count, setCount] = useState(index);
   const { showStarted } = useContext(PaintingContext);
-
 
   const calcWidth = () => {
     return ((count + 1) / PaintingsData.length) * 100 + "%";
   };
 
   const toggleModal = () => {
-    setToggleActive(!toggleActive)
-  }
+    setToggleActive(!toggleActive);
+  };
 
   const style = {
     width: calcWidth(),
@@ -30,19 +28,35 @@ export default function Info() {
 
   useEffect(() => {
     // call api or anything
-    showStarted()
- });
+    showStarted();
+  });
 
   return (
     <section>
+      <div className={`${toggleActive ? 'absolute': 'hidden'} top-0 w-[100vw] z-[9999] bg-[rgba(0,0,0,0.9)]`}>
+        <div className="border-2 h-[100vh] border-green-500 w-full flex flex-col justify-center">
+        <div className="flex flex-col self-center gap-10 px-6">
+        <p onClick={toggleModal} className="self-end uppercase text-white hover:text-dark-grey hover:cursor-pointer">close</p>
+          <img className="self-center" src={PaintingsData[count].images.gallery} alt="" />
+        </div>
+          
+        </div>
+      </div>
       <div className="px-6 mb-[67px] md:px-10 desktop:flex desktop:justify-between">
         <div className="relative mb-[98px] md:mb-16">
           {/**View Image button */}
-          <div onClick={toggleModal} className="absolute bg-[rgba(0,0,0,.8)] text-white flex items-center justify-between w-[152px] h-10 px-4 top-4 left-4">
+          <div
+            onClick={toggleModal}
+            className="absolute bg-[rgba(0,0,0,.8)] text-white flex items-center justify-between w-[152px] h-10 px-4 top-4 left-4 hover:cursor-pointer"
+          >
             <img className="w-3" src={ViewImage} alt="" />
             <p>View Image</p>
           </div>
-          <img className="block md:hidden" src={PaintingsData[count].images.hero.small} alt="" />
+          <img
+            className="block md:hidden"
+            src={PaintingsData[count].images.hero.small}
+            alt=""
+          />
           <img
             className="hidden md:block md:w-[475px]"
             src={PaintingsData[count].images.hero.large}
@@ -52,7 +66,9 @@ export default function Info() {
           {/**Painting Info */}
           <div className="absolute bottom-[-100px] left-[-1px] md:top-[-5px] md:left-[250px] desktop:left-[400px]">
             <div className="p-6 md:pt-0 md:p-16 text-black w-[280px] bg-white  md:w-[445px] md:px-16">
-              <h1 className="font-bold md:text-heading-1 md:mb-6">{PaintingsData[count].name}</h1>
+              <h1 className="font-bold md:text-heading-1 md:mb-6">
+                {PaintingsData[count].name}
+              </h1>
               <p>{PaintingsData[count].artist.name}</p>
             </div>
             <img
@@ -83,7 +99,8 @@ export default function Info() {
           </div>
 
           <div className="flex gap-6">
-            <RxTrackPrevious cursor={'pointer'}
+            <RxTrackPrevious
+              cursor={"pointer"}
               onClick={() => {
                 if (count == 0) {
                   return;
@@ -91,22 +108,20 @@ export default function Info() {
                   setCount(count - 1);
                 }
               }}
-              color={`${
-                count == 0 ? "#D8D8D8" : "black"
-              }`}
+              color={`${count == 0 ? "#D8D8D8" : "black"}`}
               size={"16px"}
               className=""
             />
 
-            <RxTrackNext cursor={'pointer'}
-            onClick={() => {
+            <RxTrackNext
+              cursor={"pointer"}
+              onClick={() => {
                 if (count == PaintingsData.length - 1) {
                   return;
                 } else {
                   setCount(count + 1);
                 }
               }}
-            
               color={`${
                 count == PaintingsData.length - 1 ? "#D8D8D8" : "black"
               }`}

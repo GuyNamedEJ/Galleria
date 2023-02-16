@@ -5,8 +5,9 @@ export default function Home() {
     return <Tile key={index} index={index} paintingData={painting} />;
   });
 
+
   return (
-    <div className="px-6 flex flex-col gap-6 md:grid md:grid-cols-2 md:items-center lg:grid-cols-4">
+    <div className="columns-1 md:columns-2 lg:columns-3 desktop:columns-4 px-6">
       {tileSet}
     </div>
   );

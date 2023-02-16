@@ -4,12 +4,13 @@ import PaintingContext from "../context/PaintingContext";
 PaintingContext;
 export default function Tile({ index, paintingData }) {
   const { toggleSlideshow } = useContext(PaintingContext);
+
   return (
     <Link
       onClick={toggleSlideshow}
       to="/slideshow"
       state={{ painting: paintingData, index: index }}
-      className=""
+      className="ml-4"
     >
       <div className="relative">
         <img className="w-full" src={paintingData.images.thumbnail} alt="" />
