@@ -33,7 +33,7 @@ export default function Info() {
 
   return (
     <section>
-      <div className={`${toggleActive ? 'fixed': 'hidden'} top-0 left-0 w-[100vw] z-[9999] bg-[rgba(0,0,0,0.9)] mx-auto`}>
+      <div className={`${toggleActive ? 'fixed': 'hidden'} overflow-hidden top-0 left-0 w-[100vw] z-[9999] bg-[rgba(0,0,0,0.9)] mx-auto`}>
         <div className="h-[100vh] w-full flex flex-col justify-center">
         <div className="flex flex-col self-center gap-10 px-6">
         <p onClick={toggleModal} className="self-end uppercase text-white hover:text-dark-grey hover:cursor-pointer">close</p>
