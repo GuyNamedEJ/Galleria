@@ -20,13 +20,13 @@ export default function Info() {
 
   const toggleModal = () => {
     setToggleActive(!toggleActive);
-    
-     // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    console.log("Modal toggle is set to " + toggleActive)
+     // Disables Background Scrolling whilst the Modal is open
         if (typeof window != 'undefined' && window.document && toggleActive) {
             document.body.style.overflow = 'hidden';
         }
         else
-           document.body.style.overflow = 'auto';
+           document.body.style.overflow = 'unset';
   };
 
   const style = {
