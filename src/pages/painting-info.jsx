@@ -22,7 +22,7 @@ export default function Info() {
     setToggleActive(!toggleActive);
     console.log("Modal toggle is set to " + toggleActive)
      // Disables Background Scrolling whilst the Modal is open
-        if (typeof window != 'undefined' && window.document && toggleActive) {
+        if (typeof window != 'undefined' && window.document && !toggleActive) {
             document.body.style.overflow = 'hidden';
         }
         else
