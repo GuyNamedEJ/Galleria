@@ -22,9 +22,11 @@ export default function Info() {
     setToggleActive(!toggleActive);
     
      // Disables Background Scrolling whilst the SideDrawer/Modal is open
-        if (typeof window != 'undefined' && window.document) {
+        if (typeof window != 'undefined' && window.document && toggleActive) {
             document.body.style.overflow = 'hidden';
         }
+        else
+           document.body.style.overflow = 'auto';
   };
 
   const style = {
